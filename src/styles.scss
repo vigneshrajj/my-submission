@@ -1,0 +1,157 @@
+//Poppins font imported
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+$primary-color: #61acb3; //Color used for buttons
+$hover-color: #55989E; // button hover color
+$font-color: #444442; // text color
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+.App {
+  display: flex;
+  //sea shore image styled
+  .sea-image {
+    height: 100vh;
+    width: 60vw;
+    object-fit: cover;
+  }
+  .right-container {
+    width: 100%;
+    //login page
+    .login-container, .signup-container {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .heading {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $font-color;
+      }
+      .sub-heading {
+        font-weight: 400;
+        color: $font-color;
+        font-size: 0.9rem;
+        margin-bottom: 3rem;
+      }
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        > input {
+          border: none;
+          border-bottom: 1px solid #c7c7c7;
+          width: 22vw;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+          &::placeholder {
+            font-size: 0.9rem;
+            font-size: 400;
+          }
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid $primary-color;
+          }
+        }
+        .form-extras-container {
+          display: flex;
+          justify-content: space-between;
+          width: 23vw;
+          margin-top: 1rem;
+          .remember-me {
+            display: flex;
+            align-items: center;
+            input {
+              height: 1.3rem;
+              width: 1.3rem;
+              margin-right: 5px;
+            }
+            label {
+              font-size: 0.7rem;
+              color: $font-color;
+            }
+          }
+          .forgot-password {
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 500;
+            font-size: 0.8rem;
+            &:hover {
+              color: $hover-color;
+            }
+          }
+        }
+        .login-btn, .signup-btn {
+          width: 100%;
+          height: 2rem;
+          border-radius: 1rem;
+          outline: none;
+          border: none;
+          background-color: $primary-color;
+          color: white;
+          font-weight: 500;
+          margin-top: 3rem;
+          &:hover {
+            background-color: $hover-color;
+            transition: background-color 0.2s;
+          }
+        }
+      }
+      .terms-and-privacy-container {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        p {
+          font-size: 0.8rem;
+          color: $font-color;
+          &.terms-of-use {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .user-list-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .heading {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $font-color;
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .user-cards {
+        overflow-y: scroll;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .card-item {
+          display: grid;
+          grid-template-columns: auto auto;
+          padding: 2rem;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          border-radius: 10px;
+          width: 80%;
+          height: 5rem;
+          margin-bottom: 1rem;
+          .title {
+            font-weight: 500;
+            font-size: 1rem;
+            color: $font-color;
+          }
+        }
+      }
+    }
+  }
+}
